@@ -19,4 +19,4 @@ const UserSchema = new Schema({
         default:Date.now,
     },
        });
-       modules.export=mongoose.model('notes',UserSchema);
+       module.exports=mongoose.model('notes',UserSchema);

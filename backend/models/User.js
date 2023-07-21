@@ -1,5 +1,5 @@
 const mongoose =require('mongoose');
-
+const { Schema } = mongoose;
 const UserSchema = new Schema({
      // String is shorthand for {type: String}
     name: {
@@ -20,4 +20,4 @@ const UserSchema = new Schema({
         default:Date.now,
     },
        });
-       modules.export=mongoose.model('user',UserSchema);
+       module.exports=mongoose.model('user',UserSchema);
