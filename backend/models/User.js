@@ -19,6 +19,9 @@ const UserSchema = new Schema({
         type:Date,
         default:Date.now,
     },
+    // extracomment: {
+    //     type:String,
+    // },
        });
        const User=mongoose.model("user",UserSchema);
     //    User.createIndexes();

@@ -1,4 +1,5 @@
 const mongoose =require('mongoose');
+const { Schema } = mongoose;
 
 const UserSchema = new Schema({
      // String is shorthand for {type: String}
