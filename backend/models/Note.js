@@ -3,6 +3,10 @@ const { Schema } = mongoose;
 
 const UserSchema = new Schema({
      // String is shorthand for {type: String}
+     user:{
+     type:mongoose.Schema.Types.ObjectId,
+     ref:'user'
+    },
     title: {
         type:String,
         required:true,
