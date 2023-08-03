@@ -1,10 +1,32 @@
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import './App.css';
+import { Navbar } from './components/Navbar';
+import { Home } from './components/Home';
+import { About } from './components/About';
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+// } from "react-router-dom";
+
 
 function App() {
   return (
+    <>
     <div className="App">
-      <h1>This is react INotebook</h1>
+<BrowserRouter>
+<Navbar/>
+
+<Routes>
+<Route path="/" element={<Home/>}/>
+<Route path="/about" element={<About/>}/>
+
+
+</Routes>
+
+</BrowserRouter>
+      
     </div>
+    </>
   );
 }
 
