@@ -6,11 +6,11 @@ import { Link ,useLocation } from "react-router-dom";
 export const Navbar = () => {
   let location = useLocation();
 
-  useEffect(() => {
-    // Google Analytics
-    // ga('send', 'pageview');
-    console.log(location.pathname);
-  }, [location]);
+  // useEffect(() => {
+  //   // Google Analytics
+  //   // ga('send', 'pageview');
+  //   console.log(location.pathname);
+  // }, [location]);
 
   return (
     <>
