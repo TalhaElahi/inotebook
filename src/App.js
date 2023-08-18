@@ -5,6 +5,9 @@ import { Home } from "./components/Home";
 import { About } from "./components/About";
 import NoteState from "./context/notes/NoteState";
 import Alert from "./components/Alert";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+
 // import {
 //   createBrowserRouter,
 //   RouterProvider,
@@ -21,6 +24,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+
             </Routes>
           </div>
         </BrowserRouter>
