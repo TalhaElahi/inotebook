@@ -135,19 +135,11 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }), // body data type must match "Content-Type" header
     });
-    const json = await response.json(); // parses JSON response into native JavaScript objects
-    console.log(json);
-    console.log("adding a new note");
-    const note = {
-      _id: "64ca6915f8686b2fa8f1ec1f",
-      user: "64c908dee7e7d74dc792ca23",
-      title: title,
-      description: description,
-      tag: tag,
-      date: "2023-08-02T14:32:53.935Z",
-      __v: 0,
-    };
+    const note = await response.json(); // parses JSON response into native JavaScript objects
     setNotes(notes.concat(note));
+
+    console.log("adding a new note");
+    // const note =json;
   };
 
   // Delete a Note
