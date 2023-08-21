@@ -20,10 +20,11 @@ router.post(
     }),
   ],
   async (req, res) => {
+    let success=false;
     // If there are errors, return bad request and error
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({success, errors: errors.array() });
     }
     // check wether the user with this email exist
     try {
@@ -33,7 +34,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ error: "Sorry a user with this email already exist" });
+          .json({ success,error: "Sorry a user with this email already exist" });
       }
       // create salt for password
       const salt = await bcrypt.genSalt(10);
@@ -52,8 +53,8 @@ router.post(
       };
       const authtoken = jwt.sign(data, JWT_SECRET);
       // console.log(authtoken);
-
-      res.json({ authtoken });
+      success=true;
+      res.json({ success,authtoken });
     } catch (error) {
       console.log(error.message);
       res.status(500).send("interner server error");
